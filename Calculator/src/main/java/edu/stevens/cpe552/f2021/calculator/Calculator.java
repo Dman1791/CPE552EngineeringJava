@@ -83,7 +83,7 @@ public class Calculator extends JFrame
     {
         switch (b)
         {
-            case "=" -> {}//Do math
+            case "=" -> text.setText(simplify(text.getText()));
             case "ABS" -> text.append("abs(");
             case "ANS" -> text.append("ans");
             case "MOD" -> text.append("%");
@@ -91,14 +91,11 @@ public class Calculator extends JFrame
             case "SQRT" -> text.append("sqrt(");
             default -> text.append(b);
         }
-        
-        text.repaint();
-        screen.repaint();
-        this.repaint();
     }
     
     private String simplify(String s)
     {
+        //TODO: math
         return "";
     }
     
