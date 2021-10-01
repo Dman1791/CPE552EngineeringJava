@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.stevens.cpe552.f2021.calculator;
 import javax.swing.*;
 import java.awt.*;
@@ -27,7 +22,7 @@ public class Calculator extends JFrame
     public Calculator(String title)
     {
         super(title);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        super.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
         buttons = new JPanel();
         screen = new JPanel();
@@ -73,10 +68,10 @@ public class Calculator extends JFrame
         screen.add(text, BorderLayout.CENTER);
         screen.setPreferredSize(new Dimension(600,200));
         
-        this.setLayout(new BorderLayout());
-        this.add(screen, BorderLayout.NORTH);
-        this.add(buttons, BorderLayout.CENTER);
-        this.setSize(600,800);
+        super.setLayout(new BorderLayout());
+        super.add(screen, BorderLayout.NORTH);
+        super.add(buttons, BorderLayout.CENTER);
+        super.setSize(600,800);
     }
     
     private void handleButton(String b)
@@ -96,18 +91,14 @@ public class Calculator extends JFrame
     private String simplify(String s)
     {
         //TODO: math
-        return "";
+        return s;
     }
     
     private ActionListener buttonListener()
     {
-        return new ActionListener()
-        {
-            public void actionPerformed(ActionEvent e)
-            {
-                JButton source = (JButton)e.getSource();
-                handleButton(source.getText());
-            }
+        return (ActionEvent e) -> {
+            JButton source = (JButton)e.getSource();
+            handleButton(source.getText());
         };
     }
 }
